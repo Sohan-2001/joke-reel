@@ -18,6 +18,10 @@ async function fetchJoke() {
             jokeDiv.innerHTML = joke.replaceAll('\n', '<br>');
         }
         jokeDiv.classList.remove('loading');
+        const scrollDown = document.createElement('div');
+        scrollDown.className = 'scroll-down';
+        scrollDown.textContent = 'Scroll Down';
+        jokeDiv.appendChild(scrollDown);
     } catch (e) {
         jokeDiv.textContent = 'Failed to load joke: ' + e.message;
         jokeDiv.classList.remove('loading');

@@ -26,7 +26,7 @@ body {
     align-items: flex-start; /* align left horizontally */
     background: #222;
     border-radius: 0;
-    font-size: clamp(0.9em, 1.8vw, 1.3em);
+    font-size: clamp(0.9em, 2.5vw, 1.3em);
     box-shadow: 0 8px 32px rgba(0,0,0,0.4);
     scroll-snap-align: start;
     margin: 0;
@@ -40,4 +40,19 @@ body {
 .joke.loading {
     color: #aaa;
     font-style: italic;
+}
+
+@media (max-width: 600px) {
+    .reel {
+        width: 100vw;
+        height: 100vh;
+        padding: 0;
+    }
+    .joke {
+        min-height: 100vh;
+        width: 100vw;
+        max-width: 100vw;
+        font-size: clamp(0.9em, 4vw, 1.1em);
+        padding: 0 8px;
+    }
 }

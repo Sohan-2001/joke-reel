@@ -5,10 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joke Reel</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="joke.png">
     <script src="https://js.puter.com/v2/"></script>
+    <style>
+    #preloader {
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        width: 100vw; height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #181818;
+        z-index: 9999;
+    }
+    </style>
 </head>
 <body>
-    <div class="reel" id="reel"></div>
+    <div id="preloader">
+        <img src="joke.png" alt="Loading..." style="width:96px;height:96px;">
+    </div>
+    <div class="reel" id="reel" style="display:none;"></div>
     <script src="main.js"></script>
+    <script>
+    // Show preloader for 1 second, then show the app
+    window.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            document.getElementById('preloader').style.display = 'none';
+            document.getElementById('reel').style.display = '';
+        }, 1000);
+    });
+    </script>
 </body>
 </html>
